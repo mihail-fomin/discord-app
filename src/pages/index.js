@@ -1,13 +1,15 @@
 import * as React from 'react'
-import ChannelColumn from '../../components/ChannelСolumn';
-import Chat from '../../components/Chat.js';
+import Header from '../../components/Header';
+import Body from '../../components/Body'
+
 
 export default function Home() {
+
 	return (
 		<>
-			<div className="flex h-screen">
-				<ChannelColumn />
-				<Chat />
+			<div className="grid grid-rows-header">
+				<Header className="z-10" />
+				<Body />
 			</div>
 		</>
 	)

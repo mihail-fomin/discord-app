@@ -6,6 +6,11 @@ body {
 	@apply text-sm text-white bg-zinc-600;
 }
 
+.grid-header {
+	grid-template-columns: auto 1fr;
+}
+
+
 .accordion-header {
 	@apply flex w-full p-2 mt-4;
 }
