@@ -16,12 +16,12 @@ const links = [
 ]
 
 
-export default function Example() {
+export default function Menu() {
 	return (
 		<Popover className="relative">
 			<Popover.Button className="flex items-center justify-between w-1/6 h-12 px-4 cursor-pointer bg-zinc-700 hover:bg-zinc-600">
 				<div className='text-xl font-bold'>Game Center</div>
-				<ChevronDownIcon className='h-8 transition-all aspect-square' aria-hidden="true" />
+				<ChevronDownIcon className='h-8 aspect-square' aria-hidden="true" />
 			</Popover.Button>
 
 			<Transition
@@ -49,7 +49,6 @@ export default function Example() {
 								</div>
 							))}
 						</div>
-
 					</div>
 				</Popover.Panel>
 			</Transition>
