@@ -7,12 +7,14 @@ export default function TextArea(props) {
 		className,
 		rows,
 		placeholder,
+		onKeyDown,
 	} = props
 
 	//local value, setValue
 	const [_value, _setValue] = React.useState(defaultValue || "")
 	const value = "value" in props ? props.value : _value
 	const onChange = "value" in props ? (props?.onChange || (() => null)) : _setValue
+
 
 	return (
 		<textarea
@@ -21,6 +23,7 @@ export default function TextArea(props) {
 			placeholder={placeholder}
 			rows={rows}
 			value={value}
+			onKeyDown={onKeyDown}
 		/>
 	)
 }
