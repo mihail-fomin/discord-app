@@ -11,9 +11,9 @@ export default function Channels() {
 }
 
 const contacts = [
-	{ id: 0, name: 'Taylor', online: true },
-	{ id: 1, name: 'Alice', online: false },
-	{ id: 2, name: 'Bob', online: false },
-	{ id: 3, name: 'Christian', online: true },
-	{ id: 4, name: 'Mary', online: false },
+	{ id: 0, name: 'Taylor', online: true, avatar: '../src/img/01.jpg' },
+	{ id: 1, name: 'Alice', online: false, avatar: '../src/img/02.jpg' },
+	{ id: 2, name: 'Bob', online: false, avatar: '../src/img/03.jpg' },
+	{ id: 3, name: 'Christian', online: true, avatar: '../src/img/04.jpg' },
+	{ id: 4, name: 'Mary', online: false, avatar: '../src/img/05.jpg' },
 ];

@@ -10,7 +10,6 @@ body {
 	grid-template-columns: auto 1fr;
 }
 
-
 .accordion-header {
 	@apply flex w-full p-2 mt-4;
 }
@@ -24,5 +23,13 @@ body {
 }
 
 .accordion-member {
-	@apply absolute right-0 transition-all opacity-0
+	@apply absolute right-0 transition-all opacity-0;
+}
+
+h2 {
+	@apply p-2 mt-4 text-zinc-300;
+}
+
+.contact-list {
+	@apply text-xl text-gray-400;
 }
