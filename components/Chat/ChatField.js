@@ -3,9 +3,10 @@ import TextArea from '../TextArea'
 import MessageList from './MessageList';
 
 
-
 export default function ChatField({ contacts }) {
 	const [input, setInput] = React.useState('');
+	// const [message, setMessage] = React.useState(history);
+
 	function onChange(value, _event) {
 		setInput(value.slice(0, 140))
 	};
@@ -13,16 +14,20 @@ export default function ChatField({ contacts }) {
 	function handleKeyDown(event) {
 		if (event.keyCode == 13 && event.shiftKey == false) {
 			event.preventDefault();
+			// setMessage([...message],
+			// 	{ messageID: history.messageID++, text: input })
 			setInput('')
 			alert('Your tweet has been sent!')
 		}
 	}
 
+
+
 	return <>
 		<div className="flex flex-col w-full">
 			<div>
 				<div className="h-[50rem] relative">
-					<MessageList contacts={contacts} />
+					<MessageList history={history} contacts={contacts} />
 				</div>
 				<TextArea
 					className='block focus:outline-none mx-auto w-[95%] p-2 basis-1/6 rounded bg-zinc-500 text-white font-bold resize-none'
@@ -36,3 +41,16 @@ export default function ChatField({ contacts }) {
 		</div>
 	</>
 }
+
+const history = [
+	{
+		messageID: 0,
+		senderID: 0,
+		text: 'Hi there!'
+	},
+	{
+		messageID: 1,
+		senderID: 1,
+		text: 'Hello!'
+	},
+]
