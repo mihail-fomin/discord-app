@@ -3,6 +3,7 @@ import { Disclosure } from '@headlessui/react'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import Accordion from './Accordion/Accordion'
 
+
 export default function ChannelList() {
 	return <>
 		<section className='bg-zinc-700 basis-1/6'>

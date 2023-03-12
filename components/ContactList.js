@@ -21,9 +21,9 @@ export default function ContactList({ contacts }) {
 			`
 		const onlineCn = contact.online ? `` : ` bg-red-600`
 
-		return <div className="flex gap-2 items-center group cursor-pointer">
-			<div className="h-12 my-2 aspect-square relative ">
-				<img className="h-full  rounded-full" src={contact.avatar} alt="#" />
+		return <div className="flex items-center gap-2 cursor-pointer group">
+			<div className="relative h-12 my-2 aspect-square ">
+				<img className="h-full rounded-full" src={contact.avatar} alt="#" />
 				<div className={twMerge(offlineCn + onlineCn)}></div>
 			</div>
 			<div>{contact.name}</div>
@@ -43,7 +43,7 @@ export default function ContactList({ contacts }) {
 			<h2>Online: {countOnline()}</h2>
 			<ul className="text-gray-300">
 				{contacts.map(contact =>
-					<li key={contact.id} className="hover:bg-zinc-600 hover:text-white rounded px-2">
+					<li key={contact.id} className="px-2 rounded hover:bg-zinc-600 hover:text-white">
 						{contact.online == true ? showMember(contact) : ''}
 
 					</li>
@@ -52,7 +52,7 @@ export default function ContactList({ contacts }) {
 			<h2>Offline: {countOffline()}</h2>
 			<ul className="contact-list">
 				{contacts.map(contact =>
-					<li key={contact.id} className="hover:bg-zinc-600 hover:text-white rounded px-2">
+					<li key={contact.id} className="px-2 rounded hover:bg-zinc-600 hover:text-white">
 
 						{contact.online == false ? showMember(contact) : ''}
 

@@ -1,5 +1,5 @@
 import ChannelList from './ChannelList';
-import Chat from './Chat';
+import Chat from './Chat/Chat';
 
 export default function Body() {
 	return <>

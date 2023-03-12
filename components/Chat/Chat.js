@@ -1,5 +1,5 @@
 import ChatField from './ChatField'
-import ContactList from './ContactList'
+import ContactList from '../ContactList'
 
 export default function Channels() {
 	return <>

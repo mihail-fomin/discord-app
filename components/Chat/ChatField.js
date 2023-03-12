@@ -1,7 +1,10 @@
 import * as React from 'react'
-import TextArea from './TextArea'
+import TextArea from '../TextArea'
+import MessageList from './MessageList';
 
-export default function ChatField() {
+
+
+export default function ChatField({ contacts }) {
 	const [input, setInput] = React.useState('');
 	function onChange(value, _event) {
 		setInput(value.slice(0, 140))
@@ -17,8 +20,10 @@ export default function ChatField() {
 
 	return <>
 		<div className="flex flex-col w-full">
-			<div className="">
-				<div className="h-[50rem]">Hi</div>
+			<div>
+				<div className="h-[50rem] relative">
+					<MessageList contacts={contacts} />
+				</div>
 				<TextArea
 					className='block focus:outline-none mx-auto w-[95%] p-2 basis-1/6 rounded bg-zinc-500 text-white font-bold resize-none'
 					onChange={onChange}
