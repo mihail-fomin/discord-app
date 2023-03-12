@@ -11,9 +11,9 @@ export default function Channels() {
 }
 
 const contacts = [
-	{ id: 0, name: 'Taylor', online: true, avatar: '../src/img/01.jpg' },
-	{ id: 1, name: 'Alice', online: false, avatar: '../src/img/02.jpg' },
-	{ id: 2, name: 'Bob', online: false, avatar: '../src/img/03.jpg' },
-	{ id: 3, name: 'Christian', online: true, avatar: '../src/img/04.jpg' },
-	{ id: 4, name: 'Mary', online: false, avatar: '../src/img/05.jpg' },
+	{ id: 0, name: 'Taylor', online: true, avatar: 'https://ik.imagekit.io/i7lh9dcka/Cat_avatar/01.jpg?updatedAt=1678605031822' },
+	{ id: 1, name: 'Alice', online: false, avatar: 'https://ik.imagekit.io/i7lh9dcka/Cat_avatar/02.jpg?updatedAt=1678605032028' },
+	{ id: 2, name: 'Bob', online: false, avatar: 'https://ik.imagekit.io/i7lh9dcka/Cat_avatar/03.jpg?updatedAt=1678605031974' },
+	{ id: 3, name: 'Christian', online: true, avatar: 'https://ik.imagekit.io/i7lh9dcka/Cat_avatar/04.jpg?updatedAt=1678605031882' },
+	{ id: 4, name: 'Mary', online: false, avatar: 'https://ik.imagekit.io/i7lh9dcka/Cat_avatar/05.jpg?updatedAt=1678605031956' },
 ];
