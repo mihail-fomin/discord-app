@@ -41,7 +41,7 @@ export default function ContactList({ contacts }) {
 	return <>
 		<section className="h-full px-4 bg-zinc-700 basis-1/4">
 			<h2>Online: {countOnline()}</h2>
-			<ul className="text-xl text-gray-300">
+			<ul className="text-gray-300">
 				{contacts.map(contact =>
 					<li key={contact.id} className="hover:bg-zinc-600 hover:text-white rounded px-2">
 						{contact.online == true ? showMember(contact) : ''}

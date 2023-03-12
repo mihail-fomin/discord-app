@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	@apply text-sm text-white bg-zinc-600;
+	@apply text-white bg-zinc-600;
 }
 
 .grid-header {
@@ -31,5 +31,5 @@ h2 {
 }
 
 .contact-list {
-	@apply text-xl text-gray-400;
+	@apply text-gray-400;
 }
