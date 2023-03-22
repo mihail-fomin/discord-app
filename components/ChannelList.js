@@ -67,7 +67,5 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 				)}
 			</Disclosure>
 		</section>
-
-
 	</>
 }
