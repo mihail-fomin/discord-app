@@ -22,7 +22,6 @@ export default function ChatField({ contacts }) {
 	}
 
 
-
 	return <>
 		<div className="flex flex-col w-full">
 			<div>

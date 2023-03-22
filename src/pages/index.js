@@ -4,12 +4,13 @@ import Body from '../../components/Body'
 
 
 export default function Home() {
+	const [activeChannelID, setActiveChannelID] = React.useState(0)
 
 	return (
 		<>
 			<div className="grid grid-rows-header">
-				<Header className="z-10" />
-				<Body />
+				<Header activeChannel={activeChannelID} className="z-10" />
+				<Body activeChannel={activeChannelID} setActiveChannel={setActiveChannelID} />
 			</div>
 		</>
 	)
