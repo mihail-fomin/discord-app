@@ -1,5 +1,7 @@
 import { twMerge } from 'tailwind-merge'
 import Menu from './Menu'
+import { textChannels } from './ChannelList'
+import { voiceChannels } from './ChannelList'
 
 export default function Header({ className = "", activeChannelID }) {
 	return <>

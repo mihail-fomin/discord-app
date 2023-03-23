@@ -9,8 +9,8 @@ export default function Home() {
 	return (
 		<>
 			<div className="grid grid-rows-header">
-				<Header activeChannel={activeChannelID} className="z-10" />
-				<Body activeChannel={activeChannelID} setActiveChannel={setActiveChannelID} />
+				<Header activeChannelID={activeChannelID} className="z-10" />
+				<Body activeChannelID={activeChannelID} setActiveChannelID={setActiveChannelID} />
 			</div>
 		</>
 	)

@@ -3,15 +3,29 @@ import { Disclosure } from '@headlessui/react'
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import Accordion from './Accordion/Accordion'
 
-export const textChannels = [{ title: "General channel", id: 1 }, { title: "Additional channel", id: 2 }, { title: "Private channel", id: 3 }]
-export const voiceChannels = [{ title: "Voice channel", id: 1 }, { title: "AFK", id: 2 }, { title: "For hamsters", id: 3 }]
+export const channels = [
+	{ title: "General channel", type: 'text', id: 1 },
+	{ title: "Additional channel", type: 'text', id: 2 },
+	{ title: "Private channel", type: 'text', id: 3 },
+	{ title: "Voice channel", type: 'voice', id: 4 },
+	{ title: "AFK", type: 'voice', id: 5 },
+	{ title: "For hamsters", type: 'voice', id: 6 }
+]
 
 export default function ChannelList({ activeChannelID, setActiveChannelID }) {
-	const activeTextIndex = textChannels.findIndex(textChannel => textChannel.id == activeChannelID)
-	const activeVoiceIndex = voiceChannels.findIndex(voiceChannel => voiceChannel.id == activeChannelID)
+	const activeIndex = channels.findIndex(channel => channel.id == activeChannelID)
 
-	const onChannelChange = (offset) => {
-		const result = textChannels.find((_channel, i) =>
+
+	const onTextChannelChange = (offset) => {
+		const result = channels.find((_channel, i) =>
+			offset == i
+		)
+		if (result) {
+			setActiveChannelID(result.id)
+		}
+	}
+	const onVoiceChannelChange = (offset) => {
+		const result = channels.find((_channel, i) =>
 			offset == i
 		)
 		if (result) {
@@ -36,9 +50,10 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 								icon={<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
 									<path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
 								</svg>}
-								items={textChannels}
-								activeIndex={activeTextIndex}
-								onClick={onChannelChange}
+								items={channels}
+								activeIndex={activeIndex}
+								setActiveIndex={onChannelChange}
+
 							/>
 						</Disclosure.Panel>
 					</>
@@ -61,7 +76,9 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 								</svg>}
 								items={voiceChannels}
 								activeIndex={activeVoiceIndex}
-								onClick={onChannelChange} />
+								setActiveIndex={onVoiceChannelChange}
+
+							/>
 						</Disclosure.Panel>
 					</>
 				)}

@@ -2,12 +2,12 @@ import * as React from 'react'
 import Item from './Item'
 import { UserPlusIcon } from '@heroicons/react/24/outline'
 
-export default function Accordion({ items, icon, activeChannelID, setActiveChannelID }) {
+export default function Accordion({ items, icon, activeIndex, setActiveIndex }) {
 	return (
 		<div>
 			{
 				items.map((item, i) => {
-					return <Item active={activeChannelID == i} onClick={() => setActiveChannelID(i)}>
+					return <Item active={activeIndex == i} onClick={() => setActiveIndex(i)}>
 						<div className='accordion-item group'>
 							{icon}
 							{item.title}
