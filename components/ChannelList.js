@@ -19,29 +19,51 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 	const voiceChannels = channels.filter(channel => channel.type == "voice")
 
 
-	const onTextChannelChange = (offset) => {
-		const result = channels.find((_channel, i) =>
-			offset == i
-		)
-		if (result) {
+	// const onTextChannelChange = (offset) => {
+	// 	const result = channels.find((_channel, i) =>
+	// 		offset == i
+	// 	)
+	// 	if (result) {
 
-			setActiveChannelID(result.id)
-		}
-	}
-	const onVoiceChannelChange = (offset) => {
-		const result = channels.find((_channel, i) =>
-			offset == i
-		)
-		if (result) {
-			setActiveChannelID(result.id)
-		}
-	}
+	// 		setActiveChannelID(result.id)
+	// 	}
+	// }
+
+	// const onVoiceChannelChange = (offset) => {
+	// 	const result = channels.find((_channel, i) =>
+	// 		offset == i
+	// 	)
+	// 	if (result) {
+	// 		setActiveChannelID(result.id)
+	// 	}
+	// }
 
 	function setOffset(type) {
-		return function setIndex(index) {
-
+		function setIndex(index) {
+			let result
+			switch (type) {
+				case "text":
+					result = textChannels.find((_channel, i) =>
+						index == i
+					)
+					if (result) {
+						setActiveChannelID(result.id)
+					}
+					break
+				case "voice":
+					result = voiceChannels.find((_channel, i) =>
+						index == i
+					)
+					if (result) {
+						setActiveChannelID(result.id)
+					}
+					break
+			}
 		}
+		setIndex()
 	}
+
+
 	return <>
 		<section className='bg-zinc-700 basis-1/6'>
 			<Disclosure>
@@ -85,7 +107,6 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 								items={voiceChannels}
 								activeIndex={activeIndex}
 								setActiveIndex={setOffset("voice")}
-
 							/>
 						</Disclosure.Panel>
 					</>

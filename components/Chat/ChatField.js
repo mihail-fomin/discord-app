@@ -43,13 +43,13 @@ export default function ChatField({ contacts }) {
 
 const history = [
 	{
-		messageID: 0,
-		senderID: 0,
+		messageID: 1,
+		senderID: 1,
 		text: 'Hi there!'
 	},
 	{
-		messageID: 1,
-		senderID: 1,
+		messageID: 2,
+		senderID: 2,
 		text: 'Hello!'
 	},
 ]

@@ -1,13 +1,18 @@
 import { twMerge } from "tailwind-merge"
 
-
-
 export default function ContactList({ contacts }) {
 
 	function countOnline() {
 		let count = 0
 		for (let contact of contacts) {
 			if (contact.online == true) { count++ }
+		}
+		return count
+	}
+	function countOffline() {
+		let count = 0
+		for (let contact of contacts) {
+			if (contact.online == false) { count++ }
 		}
 		return count
 	}
@@ -30,13 +35,6 @@ export default function ContactList({ contacts }) {
 		</div>
 	}
 
-	function countOffline() {
-		let count = 0
-		for (let contact of contacts) {
-			if (contact.online == false) { count++ }
-		}
-		return count
-	}
 
 	return <>
 		<section className="h-full px-4 bg-zinc-700 basis-1/4">
