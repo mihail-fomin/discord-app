@@ -1,9 +1,18 @@
 import { twMerge } from 'tailwind-merge'
 import Menu from './Menu'
-import { textChannels } from './ChannelList'
-import { voiceChannels } from './ChannelList'
+import { channels } from './ChannelList'
 
 export default function Header({ className = "", activeChannelID }) {
+
+	function getChannelName(id) {
+		for (let channel of channels) {
+			console.log(id);
+			if (id === channels.id) {
+				console.log(channel.title);
+				return channel.title
+			}
+		}
+	}
 	return <>
 		<header
 			className={twMerge(
@@ -15,7 +24,7 @@ export default function Header({ className = "", activeChannelID }) {
 			)}
 		>
 			<Menu />
-			<div>{activeChannelID}</div>
+			<div>{getChannelName(activeChannelID)}</div>
 		</header>
 	</>
 }

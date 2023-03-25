@@ -19,49 +19,48 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 	const voiceChannels = channels.filter(channel => channel.type == "voice")
 
 
-	// const onTextChannelChange = (offset) => {
-	// 	const result = channels.find((_channel, i) =>
-	// 		offset == i
-	// 	)
-	// 	if (result) {
-
-	// 		setActiveChannelID(result.id)
-	// 	}
-	// }
-
-	// const onVoiceChannelChange = (offset) => {
-	// 	const result = channels.find((_channel, i) =>
-	// 		offset == i
-	// 	)
-	// 	if (result) {
-	// 		setActiveChannelID(result.id)
-	// 	}
-	// }
-
-	function setOffset(type) {
-		function setIndex(index) {
-			let result
-			switch (type) {
-				case "text":
-					result = textChannels.find((_channel, i) =>
-						index == i
-					)
-					if (result) {
-						setActiveChannelID(result.id)
-					}
-					break
-				case "voice":
-					result = voiceChannels.find((_channel, i) =>
-						index == i
-					)
-					if (result) {
-						setActiveChannelID(result.id)
-					}
-					break
-			}
+	const onTextChannelChange = (offset) => {
+		const result = channels.find((_channel, i) =>
+			offset == i
+		)
+		if (result) {
+			setActiveChannelID(result.id)
 		}
-		setIndex()
 	}
+
+	const onVoiceChannelChange = (offset) => {
+		const result = channels.find((_channel, i) =>
+			offset == i
+		)
+		if (result) {
+			setActiveChannelID(result.id)
+		}
+	}
+
+	// function setOffset(type) {
+	// 	function setIndex(index) {
+	// 		let result
+	// 		switch (type) {
+	// 			case "text":
+	// 				result = textChannels.find((_channel, i) =>
+	// 					index == i
+	// 				)
+	// 				if (result) {
+	// 					setActiveChannelID(result.id)
+	// 				}
+	// 				break
+	// 			case "voice":
+	// 				result = voiceChannels.find((_channel, i) =>
+	// 					index == i
+	// 				)
+	// 				if (result) {
+	// 					setActiveChannelID(result.id)
+	// 				}
+	// 				break
+	// 		}
+	// 	}
+	// 	setIndex()
+	// }
 
 
 	return <>
@@ -83,7 +82,7 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 								</svg>}
 								items={textChannels}
 								activeIndex={activeIndex}
-								setActiveIndex={setOffset("text")}
+								setActiveIndex={onTextChannelChange}
 							/>
 						</Disclosure.Panel>
 					</>
@@ -106,7 +105,7 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 								</svg>}
 								items={voiceChannels}
 								activeIndex={activeIndex}
-								setActiveIndex={setOffset("voice")}
+								setActiveIndex={onVoiceChannelChange}
 							/>
 						</Disclosure.Panel>
 					</>
