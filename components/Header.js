@@ -7,12 +7,13 @@ export default function Header({ className = "", activeChannelID }) {
 	function getChannelName(id) {
 		for (let channel of channels) {
 			console.log(id);
-			if (id === channels.id) {
-				console.log(channel.title);
+			if (id == channels.id) {
+				console.log(channel[title]);
 				return channel.title
 			}
 		}
 	}
+
 	return <>
 		<header
 			className={twMerge(
@@ -24,7 +25,7 @@ export default function Header({ className = "", activeChannelID }) {
 			)}
 		>
 			<Menu />
-			<div>{getChannelName(activeChannelID)}</div>
+			<div>{activeChannelID}</div>
 		</header>
 	</>
 }

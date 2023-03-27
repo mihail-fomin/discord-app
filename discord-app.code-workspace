@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../2022/next-tw/cookie"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "results-summary-component-main"
+	}
+}
