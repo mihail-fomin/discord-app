@@ -38,9 +38,11 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 	// }
 
 	function setOffset(type) {
+		const textChannels = channels.filter(channel => channel.type == "text")
 		return function setIndex(index) {
 			let result
 			switch (type) {
+
 				case "text":
 					result = textChannels.find((_channel, i) =>
 						index == i
@@ -83,13 +85,12 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 								</svg>}
 								items={textChannels}
 								activeIndex={activeIndex}
-								setActiveIndex={setOffset('text')}
-							/>
+								setActiveIndex={setOffset('text')} />
 						</Disclosure.Panel>
 					</>
 				)}
 			</Disclosure>
-			<Disclosure>
+			{/* <Disclosure>
 				{({ open }) => (
 					<>
 						<Disclosure.Button className='accordion-header'>
@@ -111,7 +112,7 @@ export default function ChannelList({ activeChannelID, setActiveChannelID }) {
 						</Disclosure.Panel>
 					</>
 				)}
-			</Disclosure>
+			</Disclosure> */}
 		</section>
 	</>
 }

@@ -6,9 +6,7 @@ export default function Header({ className = "", activeChannelID }) {
 
 	function getChannelName(id) {
 		for (let channel of channels) {
-			console.log(id);
-			if (id == channels.id) {
-				console.log(channel[title]);
+			if (channel.id === id) {
 				return channel.title
 			}
 		}
@@ -25,7 +23,7 @@ export default function Header({ className = "", activeChannelID }) {
 			)}
 		>
 			<Menu />
-			<div>{activeChannelID}</div>
+			<div>{getChannelName(activeChannelID)}</div>
 		</header>
 	</>
 }
