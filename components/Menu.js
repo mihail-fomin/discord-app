@@ -18,12 +18,11 @@ const links = [
 
 export default function Menu() {
 	return (
-		<Popover className="relative">
-			<Popover.Button className="flex items-center justify-between w-1/6 h-12 px-4 cursor-pointer bg-zinc-700 hover:bg-zinc-600">
+		<Popover className="relative basis-1/6 ">
+			<Popover.Button className="flex items-center justify-between w-full h-12 px-4 cursor-pointer bg-zinc-700 hover:bg-zinc-600">
 				<div className='text-xl font-bold'>Game Center</div>
 				<ChevronDownIcon className='h-8 aspect-square' aria-hidden="true" />
 			</Popover.Button>
-
 			<Transition
 				as={Fragment}
 				enter="transition ease-out duration-200"

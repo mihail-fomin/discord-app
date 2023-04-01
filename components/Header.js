@@ -16,14 +16,14 @@ export default function Header({ className = "", activeChannelID }) {
 		<header
 			className={twMerge(
 				"sticky top-0",
-				"flex",
+				"flex justify-between items-center",
 				"shadow shadow-zinc-800",
-				"h-12",
+				"h-12 w-full",
 				className
 			)}
 		>
 			<Menu />
-			<div>{getChannelName(activeChannelID)}</div>
+			<div className='px-4 text-xl basis-5/6'>{getChannelName(activeChannelID)}</div>
 		</header>
 	</>
 }
