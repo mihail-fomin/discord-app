@@ -16,7 +16,9 @@ function getChannel(id) {
 
 export default function ChatField({ contacts, activeChannelID }) {
 	const [input, setInput] = React.useState('');
-	// const [message, setMessage] = React.useState(history);
+	const [message, setMessage] = React.useState(getChannel(activeChannelID));
+
+	let nexMessageID = 2
 
 	function onChange(value, _event) {
 		setInput(value.slice(0, 140))
@@ -25,13 +27,17 @@ export default function ChatField({ contacts, activeChannelID }) {
 	function handleKeyDown(event) {
 		if (event.keyCode == 13 && event.shiftKey == false) {
 			event.preventDefault();
-			// setMessage([...message],
-			// 	{ messageID: history.messageID++, text: input })
-			setInput('')
-			alert('Your tweet has been sent!')
+			handleSendMessage()
 		}
 	}
 
+	function handleSendMessage() {
+		setMessage([...message],
+			{ messageID: nexMessageID++, senderID: 0, text: input })
+		console.log(message);
+		setInput('')
+		alert('You have sent: ', input)
+	}
 
 	return <>
 		<div className="flex flex-col w-full">
