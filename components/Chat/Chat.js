@@ -1,10 +1,10 @@
 import ChatField from './ChatField'
 import ContactList from '../ContactList'
 
-export default function Channels() {
+export default function Channels({ activeChannelID }) {
 	return <>
 		<div className="flex basis-5/6 ">
-			<ChatField contacts={contacts}></ChatField>
+			<ChatField activeChannelID={activeChannelID} contacts={contacts}></ChatField>
 			<ContactList contacts={contacts}></ContactList>
 		</div>
 	</>

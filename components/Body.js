@@ -5,7 +5,7 @@ export default function Body({ activeChannelID, setActiveChannelID }) {
 	return <>
 		<main className='flex h-[55.5rem] z-0'>
 			<ChannelList activeChannelID={activeChannelID} setActiveChannelID={setActiveChannelID} />
-			<Chat />
+			<Chat activeChannelID={activeChannelID} />
 		</main>
 	</>
 
