@@ -3,10 +3,10 @@ import { Fragment } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const links = [
-	{ id: 0, label: 'Boost server' },
-	{ id: 1, label: 'Invite friends' },
-	{ id: 2, label: 'Notification settings' },
-	{ id: 3, label: 'Leave server' },
+	'Boost server',
+	'Invite friends',
+	'Notification settings',
+	'Leave server',
 ]
 
 export default function MenuDropDown() {
@@ -29,12 +29,12 @@ export default function MenuDropDown() {
 				<Menu.Items >
 					<ul className='w-48'>
 						{links.map((link) => (
-							<Menu.Item key={link.id} as={Fragment}>
+							<Menu.Item key={link} as={Fragment}>
 								{({ active }) => (
 									<li
 										className={`${active ? 'bg-zinc-500 text-white cursor-pointer p-4 transition-all' : 'bg-zinc-900 text-zinc-300 p-4 '}`}
 									>
-										{link.label}
+										{link}
 									</li>
 								)}
 							</Menu.Item>
@@ -44,6 +44,4 @@ export default function MenuDropDown() {
 			</Transition>
 		</Menu>
 	</>
-
-
 }
